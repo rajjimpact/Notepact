@@ -1,0 +1,24 @@
+# Maven target directory
+target/
+
+# IDE configurations
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+.factorypath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+task-*.log
+run_command_*.log
+
+# Databases & local user configurations
+notepact.db
+settings.json
+backups/

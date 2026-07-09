@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   SYNTAX.CSS — Syntax highlighting colors used by RichTextFX CodeArea.
+   These rules are theme-neutral (they only set -fx-fill on text spans).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Java / Python / JS / TypeScript ────────────────────────────────────── */
+.keyword     { -fx-fill: #569cd6; -fx-font-weight: bold; }
+.builtin     { -fx-fill: #dcdcaa; }
+.annotation  { -fx-fill: #9cdcfe; }
+.decorator   { -fx-fill: #dcdcaa; }
+.string      { -fx-fill: #ce9178; }
+.template    { -fx-fill: #ce9178; }
+.docstring   { -fx-fill: #6a9955; font-style: italic; }
+.comment     { -fx-fill: #6a9955; -fx-font-style: italic; }
+.number      { -fx-fill: #b5cea8; }
+.boolean     { -fx-fill: #569cd6; -fx-font-weight: bold; }
+.null        { -fx-fill: #569cd6; -fx-font-weight: bold; }
+.paren       { -fx-fill: #ffd700; }
+.brace       { -fx-fill: #da70d6; }
+.bracket     { -fx-fill: #179fff; }
+.semicolon   { -fx-fill: #d4d4d4; }
+.colon       { -fx-fill: #d4d4d4; }
+.comma       { -fx-fill: #d4d4d4; }
+.arrow       { -fx-fill: #569cd6; }
+
+/* ── HTML ────────────────────────────────────────────────────────────────── */
+.tag         { -fx-fill: #4ec9b0; }
+.opentag     { -fx-fill: #4ec9b0; }
+.closetag    { -fx-fill: #4ec9b0; }
+.tagend      { -fx-fill: #4ec9b0; }
+.attrib      { -fx-fill: #9cdcfe; }
+.entity      { -fx-fill: #d7ba7d; }
+.cdata       { -fx-fill: #6a9955; -fx-font-style: italic; }
+.doctype     { -fx-fill: #808080; }
+.prolog      { -fx-fill: #808080; }
+
+/* ── CSS ─────────────────────────────────────────────────────────────────── */
+.selector    { -fx-fill: #d7ba7d; }
+.property    { -fx-fill: #9cdcfe; }
+.value       { -fx-fill: #ce9178; }
+.atrule      { -fx-fill: #c586c0; }
+.important   { -fx-fill: #f44747; -fx-font-weight: bold; }
+
+/* ── JSON ────────────────────────────────────────────────────────────────── */
+/* reuses: string, number, boolean, null, brace, bracket, colon, comma */
+
+/* ── SQL ─────────────────────────────────────────────────────────────────── */
+/* reuses: keyword, string, number, comment, paren, semicolon */
+
+/* ── Markdown ─────────────────────────────────────────────────────────────── */
+.heading     { -fx-fill: #4ec9b0; -fx-font-weight: bold; -fx-font-size: 115%; }
+.bold        { -fx-fill: #dcdcaa; -fx-font-weight: bold; }
+.italic      { -fx-fill: #dcdcaa; -fx-font-style: italic; }
+.code        { -fx-fill: #ce9178; -fx-background-color: #2d2d2d; }
+.link        { -fx-fill: #4ec9b0; }
+.image       { -fx-fill: #dcdcaa; }
+.blockquote  { -fx-fill: #6a9955; -fx-font-style: italic; }
+.listitem    { -fx-fill: #d4d4d4; }
+.hr          { -fx-fill: #555555; }
+.url         { -fx-fill: #4ec9b0; }
+
+/* ── YAML ────────────────────────────────────────────────────────────────── */
+.key         { -fx-fill: #9cdcfe; }
+.anchor      { -fx-fill: #c586c0; }
+.alias       { -fx-fill: #dcdcaa; }
+
+/* ── Search highlight ─────────────────────────────────────────────────────── */
+.search-match {
+    -fx-fill: #000000;
+    -fx-background-color: #ffd700;
+}

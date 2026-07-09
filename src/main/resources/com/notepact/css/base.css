@@ -1,0 +1,223 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE.CSS — Layout, structure, and component styles shared across all themes.
+   Notepact
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Font import ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Root ────────────────────────────────────────────────────────────────── */
+.root-container {
+    -fx-spacing: 0;
+}
+
+/* ── Menu bar ────────────────────────────────────────────────────────────── */
+.menu-bar {
+    -fx-padding: 2 4 2 4;
+    -fx-font-size: 13px;
+}
+
+.menu-bar .menu {
+    -fx-padding: 4 8 4 8;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────── */
+.tool-bar {
+    -fx-padding: 4 8 4 8;
+    -fx-spacing: 3;
+}
+
+.tool-button {
+    -fx-min-width: 32px;
+    -fx-min-height: 28px;
+    -fx-font-size: 14px;
+    -fx-padding: 3 6 3 6;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.tool-button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.theme-toggle-btn {
+    -fx-min-width: 36px;
+    -fx-min-height: 28px;
+    -fx-font-size: 15px;
+    -fx-padding: 2 8 2 8;
+    -fx-cursor: hand;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+}
+
+.zoom-label {
+    -fx-font-size: 12px;
+    -fx-alignment: CENTER;
+    -fx-min-width: 42px;
+}
+
+/* ── Main split ──────────────────────────────────────────────────────────── */
+.main-split {
+    -fx-padding: 0;
+}
+
+.split-pane-divider {
+    -fx-padding: 0 1 0 1;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+.sidebar {
+    -fx-min-width: 170px;
+    -fx-max-width: 360px;
+}
+
+.sidebar-accordion {
+    -fx-padding: 0;
+}
+
+.sidebar-pane {
+    -fx-font-size: 12px;
+    -fx-padding: 0;
+}
+
+.titled-pane > .title {
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 5 8 5 8;
+    -fx-letter-spacing: 0.5px;
+}
+
+.titled-pane > .content {
+    -fx-padding: 0;
+}
+
+.small-btn {
+    -fx-font-size: 11px;
+    -fx-padding: 3 6 3 6;
+    -fx-cursor: hand;
+    -fx-background-radius: 3;
+}
+
+/* ── File explorer ────────────────────────────────────────────────────────── */
+.file-explorer {
+    -fx-font-size: 12px;
+}
+
+/* ── Bookmark list ────────────────────────────────────────────────────────── */
+.bookmark-list, .recent-list, .snippet-list {
+    -fx-font-size: 12px;
+    -fx-border-width: 0;
+}
+
+/* ── Notes area ───────────────────────────────────────────────────────────── */
+.notes-area {
+    -fx-font-size: 12px;
+    -fx-border-width: 0;
+}
+
+/* ── Editor area ─────────────────────────────────────────────────────────── */
+.editor-area {
+    -fx-padding: 0;
+}
+
+/* ── Tab pane ────────────────────────────────────────────────────────────── */
+.editor-tab-pane {
+    -fx-tab-min-height: 30px;
+    -fx-tab-max-height: 30px;
+    -fx-font-size: 13px;
+}
+
+.editor-tab-pane .tab {
+    -fx-padding: 4 12 4 12;
+    -fx-cursor: hand;
+    -fx-min-width: 80px;
+}
+
+.editor-tab-pane .tab-label {
+    -fx-font-size: 12px;
+}
+
+.editor-tab-pane .tab:selected .tab-label {
+    -fx-font-weight: 600;
+}
+
+/* ── Code area ────────────────────────────────────────────────────────────── */
+.code-area {
+    -fx-padding: 0;
+}
+
+.code-area .paragraph-box:has-caret {
+    -fx-background-color: transparent;
+}
+
+.code-area .lineno {
+    -fx-font-size: 12px;
+    -fx-padding: 0 8 0 8;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-min-width: 40px;
+}
+
+.code-area .paragraph-text {
+    -fx-padding: 0 0 0 4;
+}
+
+/* ── Find bar ─────────────────────────────────────────────────────────────── */
+.find-bar {
+    -fx-padding: 6 10 6 10;
+    -fx-spacing: 8;
+    -fx-border-width: 0 0 1 0;
+}
+
+.find-field {
+    -fx-font-size: 13px;
+    -fx-padding: 4 8 4 8;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.find-button {
+    -fx-font-size: 12px;
+    -fx-padding: 3 10 3 10;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+}
+
+.find-close-btn {
+    -fx-font-size: 14px;
+    -fx-padding: 2 8 2 8;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.find-count {
+    -fx-font-size: 12px;
+    -fx-opacity: 0.7;
+    -fx-min-width: 80px;
+}
+
+.search-check {
+    -fx-font-size: 12px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-cursor: hand;
+}
+
+/* ── Status bar ───────────────────────────────────────────────────────────── */
+.status-bar {
+    -fx-spacing: 10;
+    -fx-padding: 3 12 3 12;
+    -fx-min-height: 26px;
+    -fx-max-height: 26px;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+    -fx-opacity: 0.85;
+}
+
+.status-sep {
+    -fx-font-size: 11px;
+    -fx-opacity: 0.3;
+}

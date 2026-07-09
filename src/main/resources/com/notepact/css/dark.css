@@ -1,0 +1,417 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK.CSS — VS Code Dark+ inspired theme
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.root {
+    -fx-base:             #1e1e1e;
+    -fx-background:       #1e1e1e;
+    -fx-control-inner-background: #252526;
+    -fx-accent:           #007acc;
+    -fx-focus-color:      #007acc;
+    -fx-faint-focus-color:#007acc22;
+}
+
+/* ── Root container ──────────────────────────────────────────────────────── */
+.root-container {
+    -fx-background-color: #1e1e1e;
+}
+
+/* ── Menu bar ────────────────────────────────────────────────────────────── */
+.menu-bar {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #cccccc;
+    -fx-border-color: transparent transparent #2d2d2d transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-bar .menu-button,
+.menu-bar .menu {
+    -fx-text-fill: #cccccc;
+    -fx-background-color: transparent;
+}
+
+.menu-bar .menu-button:hover,
+.menu-bar .menu:hover {
+    -fx-background-color: #505050;
+}
+
+.context-menu, .menu-item {
+    -fx-background-color: #252526;
+    -fx-text-fill: #cccccc;
+}
+
+.context-menu .menu-item:hover,
+.context-menu .menu-item:focused {
+    -fx-background-color: #094771;
+    -fx-text-fill: #ffffff;
+}
+
+.menu-item:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────── */
+.tool-bar {
+    -fx-background-color: #3c3c3c;
+    -fx-border-color: transparent transparent #2d2d2d transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.tool-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cccccc;
+    -fx-border-color: transparent;
+}
+
+.tool-button:hover {
+    -fx-background-color: #505050;
+    -fx-text-fill: #ffffff;
+}
+
+.tool-button:pressed {
+    -fx-background-color: #007acc;
+}
+
+.theme-toggle-btn {
+    -fx-background-color: #007acc;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+}
+
+.theme-toggle-btn:hover {
+    -fx-background-color: #1a8bdc;
+}
+
+.zoom-label {
+    -fx-text-fill: #cccccc;
+}
+
+.separator .line {
+    -fx-border-color: transparent #505050 transparent transparent;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 0;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+.sidebar {
+    -fx-background-color: #252526;
+}
+
+.sidebar-accordion {
+    -fx-background-color: #252526;
+}
+
+.sidebar-pane {
+    -fx-background-color: #252526;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #333333;
+    -fx-text-fill: #bbbbbb;
+    -fx-font-weight: 600;
+}
+
+.titled-pane > .title:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #252526;
+    -fx-border-color: transparent;
+}
+
+.small-btn {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #cccccc;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+}
+
+.small-btn:hover {
+    -fx-background-color: #4a4a4a;
+}
+
+/* ── Lists ────────────────────────────────────────────────────────────────── */
+.list-view {
+    -fx-background-color: #252526;
+    -fx-border-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 12px;
+    -fx-padding: 4 8 4 8;
+}
+
+.list-cell:selected {
+    -fx-background-color: #094771;
+    -fx-text-fill: #ffffff;
+}
+
+.list-cell:hover:!selected {
+    -fx-background-color: #2d2d2d;
+}
+
+/* ── Tree view ────────────────────────────────────────────────────────────── */
+.tree-view {
+    -fx-background-color: #252526;
+}
+
+.tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 12px;
+}
+
+.tree-cell:selected {
+    -fx-background-color: #094771;
+    -fx-text-fill: #ffffff;
+}
+
+/* ── Scroll bars ──────────────────────────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #252526;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #424242;
+    -fx-background-radius: 3;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #686868;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #252526;
+    -fx-opacity: 0;
+}
+
+/* ── Split pane ───────────────────────────────────────────────────────────── */
+.split-pane {
+    -fx-background-color: #1e1e1e;
+    -fx-padding: 0;
+}
+
+.split-pane-divider {
+    -fx-background-color: #333333;
+    -fx-padding: 0 1 0 1;
+}
+
+/* ── Tab pane ─────────────────────────────────────────────────────────────── */
+.editor-tab-pane {
+    -fx-background-color: #1e1e1e;
+}
+
+.editor-tab-pane .tab-header-area {
+    -fx-background-color: #2d2d2d;
+    -fx-padding: 0;
+}
+
+.editor-tab-pane .tab-header-background {
+    -fx-background-color: #2d2d2d;
+}
+
+.editor-tab-pane .tab {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: #969696;
+    -fx-border-color: transparent;
+}
+
+.editor-tab-pane .tab:selected {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #cccccc;
+    -fx-border-color: #007acc transparent transparent transparent;
+    -fx-border-width: 2 0 0 0;
+}
+
+.editor-tab-pane .tab:hover:!selected {
+    -fx-background-color: #252525;
+    -fx-text-fill: #cccccc;
+}
+
+.editor-tab-pane .tab .tab-close-button {
+    -fx-background-color: #969696;
+}
+
+/* ── Code area ────────────────────────────────────────────────────────────── */
+.code-area {
+    -fx-background-color: #1e1e1e;
+}
+
+.code-area .content {
+    -fx-background-color: #1e1e1e;
+}
+
+.code-area .paragraph-box:has-caret {
+    -fx-background-color: #282828;
+}
+
+.code-area .paragraph-text {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-fill: #d4d4d4;
+}
+
+.code-area .lineno {
+    -fx-text-fill: #858585;
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: transparent #333333 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* ── Find bar ─────────────────────────────────────────────────────────────── */
+.find-bar {
+    -fx-background-color: #252526;
+    -fx-border-color: transparent transparent #333333 transparent;
+}
+
+.find-field {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #d4d4d4;
+    -fx-prompt-text-fill: #808080;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+}
+
+.find-field:focused {
+    -fx-border-color: #007acc;
+}
+
+.find-button {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #cccccc;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+}
+
+.find-button:hover {
+    -fx-background-color: #007acc;
+    -fx-text-fill: #ffffff;
+}
+
+.find-close-btn {
+    -fx-text-fill: #969696;
+}
+
+.find-close-btn:hover {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #cc3333;
+    -fx-background-radius: 4;
+}
+
+.find-count {
+    -fx-text-fill: #969696;
+}
+
+.search-check {
+    -fx-text-fill: #cccccc;
+}
+
+/* ── Status bar ───────────────────────────────────────────────────────────── */
+.status-bar {
+    -fx-background-color: #007acc;
+}
+
+.status-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+}
+
+.status-sep {
+    -fx-text-fill: rgba(255,255,255,0.4);
+}
+
+/* ── Notes area ───────────────────────────────────────────────────────────── */
+.notes-area {
+    -fx-control-inner-background: #252526;
+    -fx-text-fill: #cccccc;
+    -fx-prompt-text-fill: #808080;
+    -fx-border-color: transparent;
+}
+
+/* ── Spinner / ComboBox / CheckBox ──────────────────────────────────────── */
+.spinner, .combo-box {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #d4d4d4;
+    -fx-border-color: #555555;
+}
+
+.check-box .box {
+    -fx-background-color: #3c3c3c;
+    -fx-border-color: #555555;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #007acc;
+}
+
+.text-field {
+    -fx-background-color: #3c3c3c;
+    -fx-text-fill: #d4d4d4;
+    -fx-prompt-text-fill: #808080;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+}
+
+.text-field:focused {
+    -fx-border-color: #007acc;
+}
+
+/* ── Dialog pane ──────────────────────────────────────────────────────────── */
+.dialog-pane {
+    -fx-background-color: #252526;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #2d2d2d;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #cccccc;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #0e639c;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+    -fx-background-radius: 3;
+    -fx-padding: 5 14 5 14;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #1177bb;
+}
+
+.text-area {
+    -fx-control-inner-background: #1e1e1e;
+    -fx-text-fill: #d4d4d4;
+    -fx-border-color: #333333;
+}
+
+/* ── Accordion / Scroll ──────────────────────────────────────────────────── */
+.accordion {
+    -fx-padding: 0;
+}
+
+/* ── Radio buttons ────────────────────────────────────────────────────────── */
+.radio-button {
+    -fx-text-fill: #cccccc;
+}
+
+.radio-button .radio {
+    -fx-border-color: #555555;
+    -fx-background-color: #3c3c3c;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #007acc;
+}
+
+/* ── Labels / Text ─────────────────────────────────────────────────────────── */
+.label {
+    -fx-text-fill: #cccccc;
+}
