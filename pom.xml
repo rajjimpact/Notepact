@@ -168,15 +168,25 @@
 
         </plugins>
 
-        <!-- Include resource files -->
+        <!-- Include resource files — filtering MUST be false to prevent Maven from
+             corrupting CSS files by substituting ${...} as property references. -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+                <filtering>false</filtering>
                 <includes>
                     <include>**/*.css</include>
                     <include>**/*.fxml</include>
                     <include>**/*.png</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.jpeg</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.svg</include>
                     <include>**/*.json</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.ico</include>
+                    <include>**/*.icns</include>
                 </includes>
             </resource>
         </resources>

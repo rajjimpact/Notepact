@@ -1,0 +1,180 @@
+name: Build & Release Native Installers
+
+# Trigger: fires on any tag that starts with "v" (e.g. v1.0.0, v2.3.1)
+on:
+  push:
+    tags:
+      - 'v*'
+
+# Required for softprops/action-gh-release to create a release
+permissions:
+  contents: write
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────
+  # Job 1: Build Windows .msi installer
+  # ─────────────────────────────────────────────────────────────────
+  build-windows:
+    name: Build Windows Installer (.msi)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21 (Eclipse Temurin)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build fat-JAR with Maven
+        run: mvn -B package --no-transfer-progress -DskipTests
+
+      - name: Extract version from tag
+        # Strips the leading "v" from the tag name (e.g. "v1.0.0" → "1.0.0")
+        id: version
+        shell: bash
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Package as Windows .msi with jpackage
+        shell: bash
+        run: |
+          # Determine icon flag (optional — only set if icon file exists)
+          ICON_FLAG=""
+          if [ -f "src/main/packaging/notepact.ico" ]; then
+            ICON_FLAG="--icon src/main/packaging/notepact.ico"
+          fi
+
+          jpackage \
+            --type msi \
+            --name "Notepact" \
+            --app-version "${{ steps.version.outputs.VERSION }}" \
+            --vendor "Notepact" \
+            --description "A modern, professional desktop text editor" \
+            --input target \
+            --main-jar notepact-${{ steps.version.outputs.VERSION }}.jar \
+            --main-class com.notepact.Main \
+            --dest dist \
+            --win-menu \
+            --win-shortcut \
+            --win-dir-chooser \
+            --java-options "--add-opens=java.base/java.lang=ALL-UNNAMED" \
+            --java-options "--add-opens=java.base/java.util=ALL-UNNAMED" \
+            --java-options "--add-opens=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED" \
+            --java-options "--add-exports=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED" \
+            --java-options "--add-exports=javafx.base/com.sun.javafx.runtime=ALL-UNNAMED" \
+            $ICON_FLAG
+
+      - name: Upload Windows installer as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: dist/*.msi
+          retention-days: 7
+
+  # ─────────────────────────────────────────────────────────────────
+  # Job 2: Build macOS .dmg installer
+  # ─────────────────────────────────────────────────────────────────
+  build-macos:
+    name: Build macOS Installer (.dmg)
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21 (Eclipse Temurin)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build fat-JAR with Maven
+        run: mvn -B package --no-transfer-progress -DskipTests
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Package as macOS .dmg with jpackage
+        run: |
+          # Determine icon flag (optional — only set if icon file exists)
+          ICON_FLAG=""
+          if [ -f "src/main/packaging/notepact.icns" ]; then
+            ICON_FLAG="--icon src/main/packaging/notepact.icns"
+          fi
+
+          jpackage \
+            --type dmg \
+            --name "Notepact" \
+            --app-version "${{ steps.version.outputs.VERSION }}" \
+            --vendor "Notepact" \
+            --description "A modern, professional desktop text editor" \
+            --input target \
+            --main-jar notepact-${{ steps.version.outputs.VERSION }}.jar \
+            --main-class com.notepact.Main \
+            --dest dist \
+            --java-options "--add-opens=java.base/java.lang=ALL-UNNAMED" \
+            --java-options "--add-opens=java.base/java.util=ALL-UNNAMED" \
+            --java-options "--add-opens=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED" \
+            --java-options "--add-exports=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED" \
+            --java-options "--add-exports=javafx.base/com.sun.javafx.runtime=ALL-UNNAMED" \
+            $ICON_FLAG
+
+      - name: Upload macOS installer as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-installer
+          path: dist/*.dmg
+          retention-days: 7
+
+  # ─────────────────────────────────────────────────────────────────
+  # Job 3: Create GitHub Release and attach both installers
+  # Runs only after BOTH build jobs succeed
+  # ─────────────────────────────────────────────────────────────────
+  release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    needs: [build-windows, build-macos]
+
+    steps:
+      - name: Download Windows installer
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-installer
+          path: release-assets/
+
+      - name: Download macOS installer
+        uses: actions/download-artifact@v4
+        with:
+          name: macos-installer
+          path: release-assets/
+
+      - name: List release assets (for debugging)
+        run: ls -lh release-assets/
+
+      - name: Create draft GitHub Release with installers
+        uses: softprops/action-gh-release@v2
+        with:
+          # Creates a DRAFT release — you review and publish manually
+          draft: true
+          name: "Notepact ${{ github.ref_name }}"
+          body: |
+            ## Notepact ${{ github.ref_name }}
+
+            ### 📦 Download
+
+            | Platform | File | Notes |
+            |---|---|---|
+            | 🪟 Windows | `Notepact-*.msi` | Run the installer, follow the wizard |
+            | 🍎 macOS | `Notepact-*.dmg` | Open the DMG and drag Notepact to Applications |
+
+            ### ⚠️ macOS Gatekeeper Notice
+            This build is **unsigned**. On first launch, right-click the app → **Open** to bypass Gatekeeper.
+
+            ### 📝 Changelog
+            _Add your release notes here before publishing._
+          files: release-assets/*
