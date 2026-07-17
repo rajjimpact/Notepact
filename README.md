@@ -1,6 +1,14 @@
 # 📄 Notepact
 
+[![Build & Release Native Installers](https://github.com/rajjimpact/Notepact/actions/workflows/build.yml/badge.svg)](https://github.com/rajjimpact/Notepact/actions/workflows/build.yml)
+
 A modern, professional desktop text editor built with **Java 21 + JavaFX 21 + RichTextFX**.
+
+## 📦 Downloads
+
+You can download pre-compiled native installers for Windows and macOS from the [Releases](https://github.com/rajjimpact/Notepact/releases) page:
+- **Windows:** `.msi` installer (places Notepact in the Start Menu and Desktop shortcuts)
+- **macOS:** `.dmg` disk image (drag to Applications folder)
 
 ---
 
