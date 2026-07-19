@@ -307,9 +307,9 @@ public class MainController {
             new SeparatorMenuItem(),
             buildThemeMenu(),
             new SeparatorMenuItem(),
-            menuItem("Zoom In",    "Ctrl+=",  this::zoomIn),
-            menuItem("Zoom Out",   "Ctrl+-",  this::zoomOut),
-            menuItem("Reset Zoom", "Ctrl+0",  this::zoomReset)
+            menuItem("Zoom In",    null,  this::zoomIn),
+            menuItem("Zoom Out",   null,  this::zoomOut),
+            menuItem("Reset Zoom", null,  this::zoomReset)
         );
         return m;
     }

@@ -27,7 +27,8 @@
 
 .sidebar { -fx-background-color: #073642; }
 .sidebar-accordion { -fx-background-color: #073642; }
-.titled-pane > .title { -fx-background-color: #094d5f; -fx-text-fill: #657b83; }
+.titled-pane > .title { -fx-background-color: #094d5f; -fx-text-fill: #93a1a1; }
+
 .titled-pane > .content { -fx-background-color: #073642; }
 
 .split-pane { -fx-background-color: #002b36; }
@@ -50,16 +51,18 @@
 .editor-tab-pane .tab { -fx-background-color: #073642; -fx-text-fill: #586e75; }
 .editor-tab-pane .tab:selected {
     -fx-background-color: #002b36;
-    -fx-text-fill: #93a1a1;
+    -fx-text-fill: #eee8d5;
     -fx-border-color: #268bd2 transparent transparent transparent;
     -fx-border-width: 2 0 0 0;
 }
+
 .editor-tab-pane .tab:hover:!selected { -fx-background-color: #094d5f; }
 
 .code-area { -fx-background-color: #002b36; }
 .code-area .content { -fx-background-color: #002b36; }
 .code-area .paragraph-box:has-caret { -fx-background-color: #073642; }
-.code-area .paragraph-text { -fx-font-family: "Consolas", monospace; -fx-font-size: 14px; -fx-fill: #839496; }
+.code-area .paragraph-text { -fx-fill: #fdf6e3; }
+
 .code-area .lineno { -fx-text-fill: #586e75; -fx-background-color: #002b36; -fx-border-color: transparent #094d5f transparent transparent; -fx-border-width: 0 1 0 0; }
 
 .find-bar { -fx-background-color: #073642; -fx-border-color: transparent transparent #094d5f transparent; }

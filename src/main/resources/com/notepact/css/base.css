@@ -146,6 +146,8 @@
 /* ── Code area ────────────────────────────────────────────────────────────── */
 .code-area {
     -fx-padding: 0;
+    -fx-font-size: 14px; /* Default size; overridden by inline style when zoom changes */
+    -fx-font-family: "Consolas", "Courier New", monospace;
 }
 
 .code-area .paragraph-box:has-caret {
@@ -161,6 +163,8 @@
 
 .code-area .paragraph-text {
     -fx-padding: 0 0 0 4;
+    -fx-font-size: inherit; /* Inherit from .code-area so zoom inline style propagates */
+    -fx-font-family: inherit;
 }
 
 /* ── Find bar ─────────────────────────────────────────────────────────────── */

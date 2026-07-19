@@ -90,10 +90,9 @@
 .code-area .content { -fx-background-color: #ffffff; }
 .code-area .paragraph-box:has-caret { -fx-background-color: #f5f5f5; }
 .code-area .paragraph-text {
-    -fx-font-family: "Consolas", "Courier New", monospace;
-    -fx-font-size: 14px;
     -fx-fill: #1e1e1e;
 }
+
 .code-area .lineno {
     -fx-text-fill: #999999;
     -fx-background-color: #f0f0f0;

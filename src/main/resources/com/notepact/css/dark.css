@@ -251,10 +251,9 @@
 }
 
 .code-area .paragraph-text {
-    -fx-font-family: "Consolas", "Courier New", monospace;
-    -fx-font-size: 14px;
     -fx-fill: #d4d4d4;
 }
+
 
 .code-area .lineno {
     -fx-text-fill: #858585;

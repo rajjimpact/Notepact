@@ -23,11 +23,13 @@
 .tool-button:hover { -fx-background-color: #4a4a3a; }
 .tool-button:pressed { -fx-background-color: #a6e22e; -fx-text-fill: #272822; }
 .theme-toggle-btn { -fx-background-color: #a6e22e; -fx-text-fill: #272822; }
-.zoom-label { -fx-text-fill: #75715e; }
+.zoom-label { -fx-text-fill: #cfcfc2; }
+
 
 .sidebar { -fx-background-color: #3e3d32; }
 .sidebar-accordion { -fx-background-color: #3e3d32; }
-.titled-pane > .title { -fx-background-color: #4a4a3a; -fx-text-fill: #75715e; }
+.titled-pane > .title { -fx-background-color: #4a4a3a; -fx-text-fill: #cfcfc2; }
+
 .titled-pane > .content { -fx-background-color: #3e3d32; }
 
 .split-pane { -fx-background-color: #272822; }
@@ -59,7 +61,8 @@
 .code-area { -fx-background-color: #272822; }
 .code-area .content { -fx-background-color: #272822; }
 .code-area .paragraph-box:has-caret { -fx-background-color: #32312c; }
-.code-area .paragraph-text { -fx-font-family: "Consolas", monospace; -fx-font-size: 14px; -fx-fill: #f8f8f2; }
+.code-area .paragraph-text { -fx-fill: #f8f8f2; }
+
 .code-area .lineno { -fx-text-fill: #75715e; -fx-background-color: #272822; -fx-border-color: transparent #3e3d32 transparent transparent; -fx-border-width: 0 1 0 0; }
 
 .find-bar { -fx-background-color: #3e3d32; -fx-border-color: transparent transparent #1a1a15 transparent; }
