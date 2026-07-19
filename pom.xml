@@ -6,7 +6,7 @@
 
     <groupId>com.notepact</groupId>
     <artifactId>notepact</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>Notepact</name>
     <description>A modern, professional desktop text editor built with JavaFX and RichTextFX</description>

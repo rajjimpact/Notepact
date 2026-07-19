@@ -1310,7 +1310,7 @@ public class MainController {
 
     private void showAbout() {
         showInfo("About Notepact",
-                "Notepact v1.0.0\n\n" +
+                "Notepact v1.0.1\n\n" +
                 "A modern, professional desktop text editor.\n" +
                 "Built with Java 21 + JavaFX 21 + RichTextFX.\n\n" +
                 "Features: Multi-tab editing, Syntax highlighting,\n" +
